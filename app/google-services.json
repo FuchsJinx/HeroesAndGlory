@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "254495536980",
+    "project_id": "heroesandglory",
+    "storage_bucket": "heroesandglory.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254495536980:android:42d4567c63cfe0ae8d7ac1",
+        "android_client_info": {
+          "package_name": "com.HG.heroesglory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB0SCSOegs7q2eJYLc7vowtn9a6LJbDu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
