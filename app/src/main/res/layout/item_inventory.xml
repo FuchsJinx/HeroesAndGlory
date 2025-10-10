@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="?attr/selectableItemBackground">
+
+        <!-- Изображение предмета -->
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="12dp">
+
+            <ImageView
+                android:id="@+id/itemImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/item_background" />
+
+            <!-- Бэйджик количества -->
+            <TextView
+                android:id="@+id/itemQuantityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/quantity_badge"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <!-- Бэйджик экипировки -->
+            <ImageView
+                android:id="@+id/equippedBadge"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_equipped"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <!-- Информация о предмете -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/itemNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Название предмета"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemTypeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Тип предмета"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/itemStatsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Статистика предмета"
+                android:textColor="@color/accent_green"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <!-- Кнопки действий -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/useButton"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:text="Исп."
+                android:textSize="12sp"
+                style="@style/SmallButton" />
+
+            <Button
+                android:id="@+id/infoButton"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Инфо"
+                android:textSize="12sp"
+                style="@style/SmallOutlinedButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/dialog_background">
+
+    <!-- Заголовок диалога -->
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Actions"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:layout_marginBottom="12dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Название предмета -->
+    <TextView
+        android:id="@+id/itemNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Name"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/secondary_text"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Тип предмета -->
+    <TextView
+        android:id="@+id/itemTypeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Type"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textColor="@color/hint_text"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Разделитель -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Кнопка экипировки -->
+    <Button
+        android:id="@+id/equipButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Equip"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_primary"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <!-- Кнопка использования -->
+    <Button
+        android:id="@+id/useButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Use"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_success"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <!-- Кнопка осмотра -->
+    <Button
+        android:id="@+id/inspectButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Inspect"
+        android:textSize="16sp"
+        android:background="@drawable/button_secondary"
+        android:textColor="@color/primary_text"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Кнопка выброса -->
+    <Button
+        android:id="@+id/dropButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Drop"
+        android:textSize="16sp"
+        android:background="@drawable/button_danger"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Разделитель -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Кнопка отмены -->
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Cancel"
+        android:textSize="16sp"
+        android:background="@drawable/button_borderless"
+        android:textColor="@color/secondary_text" />
+
+</LinearLayout>

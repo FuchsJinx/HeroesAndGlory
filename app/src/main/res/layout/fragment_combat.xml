@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/combat_bg_landscape"
+    android:padding="16dp">
+
+    <!-- Поле боя -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/combatTitleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bandit Ambush!"
+                android:textSize="24sp"
+                android:textColor="@color/accent_red"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/roundText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Round 1"
+                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:padding="8dp"
+                android:background="@drawable/rounded_panel" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/combatantsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:background="@drawable/combat_field" />
+
+    </LinearLayout>
+
+    <!-- Панель действий и лог -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="16dp">
+
+        <!-- Кнопки действий -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/attackButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="⚔️ Attack"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                style="@style/PrimaryButton" />
+
+            <Button
+                android:id="@+id/skillButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="✨ Use Skill"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                style="@style/SecondaryButton" />
+
+            <Button
+                android:id="@+id/itemButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="🎒 Use Item"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"
+                style="@style/SecondaryButton" />
+
+            <Button
+                android:id="@+id/fleeButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="🏃 Flee"
+                android:textSize="18sp"
+                style="@style/DangerButton" />
+
+        </LinearLayout>
+
+        <!-- Лог боя -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Combat Log"
+            android:textSize="16sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_panel"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/combatLogText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bandits ambush your party! Prepare for combat!\n\n"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:lineSpacingExtra="4dp" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

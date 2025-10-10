@@ -1,9 +1,88 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.HeroesGlory" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Базовая тема приложения -->
+    <style name="Theme.DnDGame" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/text_black</item>
+
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
+        <!-- Добавляем стиль для CardView -->
+        <item name="cardViewStyle">@style/CardStyle</item>
     </style>
 
-    <style name="Theme.HeroesGlory" parent="Base.Theme.HeroesGlory" />
+    <!-- Стиль для карточек (исправленная версия) -->
+    <style name="CardStyle" parent="@android:style/Widget">
+        <item name="android:background">@drawable/card_bg</item>
+        <item name="android:radius">12dp</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!-- Полноэкранная тема без ActionBar (светлая) -->
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!-- Фон -->
+        <item name="android:windowBackground">@drawable/bg_gradient_light</item>
+
+        <!-- Статус бар -->
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- Навигационная панель -->
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- Полноэкранная тема без ActionBar (темная) -->
+    <style name="Theme.AppCompat.Dark.NoActionBar.FullScreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!-- Фон -->
+        <item name="android:windowBackground">@drawable/bg_gradient_dark</item>
+
+        <!-- Статус бар -->
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- Навигационная панель -->
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- Стиль для кнопок -->
+    <style name="Widget.AppCompat.Button.Colored" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_bg_rounded</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
 </resources>

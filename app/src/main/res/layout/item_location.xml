@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/locationCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Location Image -->
+        <ImageView
+            android:id="@+id/locationImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_location_placeholder"
+            android:background="@color/colorPrimaryLight"
+            android:contentDescription="Изображение локации" />
+
+        <!-- Location Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/locationName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Название локации"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary" />
+
+            <TextView
+                android:id="@+id/locationDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Описание локации..."
+                android:textSize="14sp"
+                android:textColor="@color/textSecondary"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Location Status -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/locationStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Новая"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/status_active" />
+
+                <TextView
+                    android:id="@+id/questsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="3 квеста"
+                    android:textSize="12sp"
+                    android:textColor="@color/textSecondary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Navigation Arrow -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/textSecondary" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

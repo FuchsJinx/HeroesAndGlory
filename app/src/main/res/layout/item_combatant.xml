@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="110dp"
+    android:layout_height="140dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Индикатор текущего хода -->
+        <View
+            android:id="@+id/turnIndicator"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/turn_indicator"
+            android:visibility="invisible" />
+
+        <!-- Изображение бойца -->
+        <ImageView
+            android:id="@+id/combatantImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/character_placeholder" />
+
+        <!-- Имя бойца -->
+        <TextView
+            android:id="@+id/combatantNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Полоска HP -->
+        <ProgressBar
+            android:id="@+id/hpProgressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="4dp"
+            android:max="100"
+            android:progress="100" />
+
+        <!-- Текст HP -->
+        <TextView
+            android:id="@+id/combatantHpText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HP: 50/50"
+            android:textAlignment="center"
+            android:textSize="10sp" />
+
+        <!-- Статус эффект -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="9sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

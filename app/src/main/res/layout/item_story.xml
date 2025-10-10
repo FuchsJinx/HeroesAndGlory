@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/storyCard"
+    android:layout_width="300dp"
+    android:layout_height="270dp"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/story_card_background">
+
+        <!-- Изображение истории -->
+        <ImageView
+            android:id="@+id/storyImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/story_image"
+            tools:src="@drawable/ic_story_placeholder" />
+
+        <!-- Градиентный оверлей для текста -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/story_gradient_overlay" />
+
+        <!-- Контент поверх изображения -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-80dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Заголовок истории -->
+            <TextView
+                android:id="@+id/storyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:lineSpacingExtra="4sp"
+                tools:text="The Lost Crown of Ancient Kings" />
+
+            <!-- Информационная строка -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Количество игроков -->
+                <TextView
+                    android:id="@+id/storyPlayers"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_group"
+                    tools:text="2-4 players" />
+
+                <!-- Сложность -->
+                <TextView
+                    android:id="@+id/storyDifficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:background="@drawable/difficulty_badge"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    tools:text="MEDIUM" />
+
+            </LinearLayout>
+
+            <!-- Дополнительная информация -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Время прохождения -->
+                <TextView
+                    android:id="@+id/storyDuration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_time"
+                    tools:text="2-3 hours" />
+
+                <!-- Рейтинг -->
+                <TextView
+                    android:id="@+id/storyRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_star"
+                    tools:text="4.8" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Индикатор выбора -->
+        <View
+            android:id="@+id/selectionIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/colorPrimary"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

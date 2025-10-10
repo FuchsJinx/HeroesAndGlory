@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/bg_action_item">
+
+    <ImageView
+        android:id="@+id/actionIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_default_action"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:src="@drawable/ic_sword" />
+
+    <TextView
+        android:id="@+id/actionTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{action.actionTitle}"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toEndOf="@id/actionIcon"
+        app:layout_constraintEnd_toStartOf="@id/actionButton"
+        app:layout_constraintTop_toTopOf="@id/actionIcon"
+        tools:text="Поднять меч" />
+
+    <TextView
+        android:id="@+id/actionDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{action.actionDescription}"
+        android:textSize="14sp"
+        android:textColor="@color/gray_light"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@id/actionTitle"
+        app:layout_constraintEnd_toEndOf="@id/actionTitle"
+        app:layout_constraintTop_toBottomOf="@id/actionTitle"
+        app:layout_constraintBottom_toBottomOf="@id/actionIcon"
+        tools:text="Взять меч в инвентарь" />
+
+    <Button
+        android:id="@+id/actionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="Выполнить"
+        android:textSize="12sp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/btn_action_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

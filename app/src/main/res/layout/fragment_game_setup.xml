@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/game_setup_bg_landscape">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Левая панель - информация о истории -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingEnd="16dp">
+
+            <!-- Заголовок с состоянием загрузки -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/storyTitleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The Lost Crown"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_gold"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <ProgressBar
+                    android:id="@+id/loadingProgressBar"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <!-- Изображение истории -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_panel">
+
+                <ImageView
+                    android:id="@+id/storyImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/story_crown" />
+
+                <ProgressBar
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <!-- Описание истории -->
+            <TextView
+                android:id="@+id/storyDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="An ancient artifact has been stolen from the royal vault..."
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:lineSpacingExtra="4dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_panel"
+                android:layout_marginBottom="12dp"
+                android:minHeight="120dp" />
+
+            <!-- Информация о игроках и сложности -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/playerRangeText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="For 2-4 players"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_panel"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:id="@+id/storyDifficultyText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Medium"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_panel"
+                    android:layout_marginStart="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Правая панель - настройки игроков -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:orientation="vertical"
+            android:paddingStart="16dp">
+
+            <!-- Заголовок настроек -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Party Setup"
+                android:textSize="22sp"
+                android:textColor="@color/primary_gold"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Выбор количества игроков -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_panel"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Number of Players"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Select party size:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <NumberPicker
+                        android:id="@+id/playerCountPicker"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/number_picker_bg" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Список игроков -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_panel"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:minHeight="200dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Player Names"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_gold"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/playersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:padding="4dp"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+
+            <!-- Кнопки действий -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/startCharacterCreationButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Create Characters"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"
+                    style="@style/PrimaryButton" />
+
+                <Button
+                    android:id="@+id/backButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Back to Stories"
+                    android:textSize="16sp"
+                    style="@style/SecondaryButton" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Heroes&amp;Glory</string>
+    <string name="players_format">Игроков: %d-%d</string>
+    <string name="player_range_format">For %1$d - %2$d players</string>
+    <string name="hp_format">HP: %1$d/%2$d</string>
+    <string name="gold_format">Gold: %1$d</string>
+    <string name="ac_format">AC: %1$d</string>
+    <string name="xp_format">XP: %1$d/%2$d</string>
+    <string name="attribute_format">%1$s: %2$d (%3$s)</string>
+    <string name="quests_in_location">Quests in %s</string>
+    <string name="available_quests">Available Quests</string>
+    <string name="story_image">Story image</string>
+    <string name="equip_weapon">Equip Weapon</string>
+    <string name="equip_armor">Equip Armor</string>
+    <string name="equip_item">Equip</string>
+    <string name="use_item">Use</string>
+    <string name="drink_potion">Drink</string>
+    <string name="read_scroll">Read</string>
+    <string name="read_book">Read</string>
+    <string name="drop_item">Drop</string>
+    <string name="inspect_item">Inspect</string>
 </resources>

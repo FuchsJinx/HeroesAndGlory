@@ -1,5 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Основные цвета -->
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_light">#BB86FC</color>
+    <color name="accent">#03DAC5</color>
+
+    <!-- Текст -->
+<!--    <color name="text_primary">#212121</color>-->
+<!--    <color name="text_secondary">#757575</color>-->
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_black">#000000</color>
+
+    <!-- Фоны -->
+    <color name="background_dark">#121212</color>
+    <color name="background_light">#FFFFFF</color>
+    <color name="background_surface">#1E1E1E</color>
+
+    <!-- Дополнительные -->
+    <color name="gray">#9E9E9E</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_dark">#616161</color>
+    <color name="error">#CF6679</color>
+    <color name="success">#4CAF50</color>
+
+    <!-- Прозрачность -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+
+    <!-- Основные цвета -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Игровые цвета -->
+    <color name="dark_background">#FF121212</color>
+    <color name="darker_background">#FF0A0A0A</color>
+    <color name="panel_background">#402A2A2A</color>
+    <color name="border_color">#60FFFFFF</color>
+
+    <color name="primary_gold">#FFFFD700</color>
+    <color name="secondary_silver">#FFC0C0C0</color>
+    <color name="accent_red">#FFFF4444</color>
+    <color name="accent_green">#FF4CAF50</color>
+    <color name="accent_blue">#FF2196F3</color>
+    <color name="accent_purple">#FF9C27B0</color>
+
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFB0B0B0</color>
+    <color name="text_hint">#FF808080</color>
+
+    <color name="button_primary">#FF6200EE</color>
+    <color name="button_secondary">#FF3700B3</color>
+    <color name="button_success">#FF4CAF50</color>
+    <color name="button_danger">#FFF44336</color>
+
+    <color name="warrior_color">#FFC41E3A</color>
+    <color name="mage_color">#FF3F51B5</color>
+    <color name="rogue_color">#FF4CAF50</color>
+
+    <!-- Основные цвета -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Дополнительные цвета -->
+    <color name="colorPrimaryLight">#C5CAE9</color>
+    <color name="backgroundLight">#F5F5F5</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+
+    <!-- Цвета для статусов -->
+    <color name="status_active">#4CAF50</color>
+    <color name="status_paused">#FF9800</color>
+    <color name="status_completed">#2196F3</color>
+    <color name="status_failed">#F44336</color>
+
+    <!-- Цвета для сложности квестов -->
+    <color name="difficulty_easy">#4CAF50</color>
+    <color name="difficulty_medium">#FF9800</color>
+    <color name="difficulty_hard">#F44336</color>
+    <color name="difficulty_legendary">#9C27B0</color>
+
+    <!-- Боевые цвета -->
+    <color name="danger">#FFFF4444</color>
+    <color name="warning">#FFFFBB33</color>
+    <color name="info">#FF33B5E5</color>
+
+    <!-- Цвета редкости предметов -->
+    <color name="rarity_common">#FFFFFFFF</color>
+    <color name="rarity_uncommon">#FF1EFF00</color>
+    <color name="rarity_rare">#FF0070DD</color>
+    <color name="rarity_epic">#FFA335EE</color>
+    <color name="rarity_legendary">#FFFF8000</color>
+    <color name="rarity_artifact">#FFE6CC80</color>
+
+    <!-- Фоновые цвета -->
+    <color name="surface_light">#FFFFFFFF</color>
+    <color name="surface_dark">#FF2D2D2D</color>
+
+    <color name="quest_type_main">#FF6B35</color>
+    <color name="quest_type_side">#4ECDC4</color>
+    <color name="quest_type_companion">#45B7D1</color>
+    <color name="quest_main_highlight">#1AFF6B35</color>
+
+    <color name="story_selected">#1A4CAF50</color>
+    <color name="delete.xml">#FF9C27B0</color>
+
+    <color name="card_background">#1E1E1E</color>
+    <color name="border_light">#333333</color>
+    <color name="difficulty_expert">#333333</color>
+
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="hint_text">#9E9E9E</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="green">#00BB00</color>
 </resources>

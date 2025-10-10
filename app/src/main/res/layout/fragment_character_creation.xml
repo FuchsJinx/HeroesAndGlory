@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/character_creation_bg_landscape"
+    android:padding="24dp">
+
+    <!-- Левая панель - информация о игроке и классе -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create Your Hero"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Информация о текущем игроке -->
+            <TextView
+                android:id="@+id/playerInfoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Player 1 of 4"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Имя персонажа -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Character Name"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/characterNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter character name"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Выбор класса -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Character Class"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/classSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_background"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Описание выбранного класса -->
+            <TextView
+                android:id="@+id/classDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select a class to see description..."
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:lineSpacingExtra="4dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_panel"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Характеристики -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Attributes"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Сила -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Strength"
+                    android:textSize="14sp"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/strengthValue"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/strengthMinusBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:text="-"
+                    android:textSize="12sp"
+                    android:layout_marginStart="8dp" />
+
+                <Button
+                    android:id="@+id/strengthPlusBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:text="+"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp" />
+
+            </LinearLayout>
+
+            <!-- Ловкость -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dexterity"
+                    android:textSize="14sp"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/dexterityValue"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/dexterityMinusBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:text="-"
+                    android:textSize="12sp"
+                    android:layout_marginStart="8dp" />
+
+                <Button
+                    android:id="@+id/dexterityPlusBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:text="+"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp" />
+
+            </LinearLayout>
+
+            <!-- Интеллект -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Intelligence"
+                    android:textSize="14sp"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/intelligenceValue"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/intelligenceMinusBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:text="-"
+                    android:textSize="12sp"
+                    android:layout_marginStart="8dp" />
+
+                <Button
+                    android:id="@+id/intelligencePlusBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:text="+"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp" />
+
+            </LinearLayout>
+
+            <!-- Очки характеристик -->
+            <TextView
+                android:id="@+id/attributePointsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Attribute Points: 27"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Правая панель - предпросмотр персонажа и кнопки (ТЕПЕРЬ ТОЖЕ ПРОКРУЧИВАЕТСЯ) -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:paddingStart="16dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Предпросмотр персонажа -->
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:background="@drawable/character_preview_bg"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/characterPreviewImage"
+                    android:layout_width="180dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/character_warrior" />
+
+            </FrameLayout>
+
+            <!-- Базовая информация -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_panel"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:id="@+id/characterInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Class: Not selected\nHP: 0\nAC: 0"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+
+            <!-- Кнопки навигации -->
+            <Button
+                android:id="@+id/previousPlayerButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Previous Player"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                style="@style/SecondaryButton" />
+
+            <Button
+                android:id="@+id/nextPlayerButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Next Player"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                style="@style/PrimaryButton" />
+
+            <Button
+                android:id="@+id/startGameButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Start Adventure!"
+                android:textSize="18sp"
+                android:visibility="gone"
+                style="@style/SuccessButton" />
+
+            <!-- Дополнительное пространство для прокрутки -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

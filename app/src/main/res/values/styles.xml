@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.HeroesOfGlory" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary_gold</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/dark_background</item>
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:navigationBarColor">@color/darker_background</item>
+    </style>
+
+    <!-- Primary Button -->
+    <style name="PrimaryButton" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="backgroundTint">@color/button_primary</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Secondary Button -->
+    <style name="SecondaryButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textColor">@color/primary_gold</item>
+        <item name="strokeColor">@color/primary_gold</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+    </style>
+
+    <!-- Success Button -->
+    <style name="SuccessButton" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="backgroundTint">@color/button_success</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Icon Button -->
+    <style name="IconButton" parent="Widget.Material3.Button">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="backgroundTint">@color/panel_background</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Danger Button -->
+    <style name="DangerButton" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="backgroundTint">@color/button_danger</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SmallButton" parent="Widget.Material3.Button">
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="backgroundTint">@color/button_primary</item>
+        <item name="cornerRadius">4dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="SmallOutlinedButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_hint</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="TitleText">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/primary_gold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="SubtitleText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="HintText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_hint</item>
+    </style>
+
+<!--    <style name="Widget.AppCompat.Button.Colored" parent="Widget.AppCompat.Button">-->
+<!--        <item name="android:background">@color/purple_500</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--    </style>-->
+
+    <!-- Базовый стиль для кастомных диалогов -->
+    <style name="CustomDialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- Стиль для темной темы -->
+    <style name="CustomDialog.Dark" parent="ThemeOverlay.Material3.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.7</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- Стиль для кнопок -->
+    <style name="CustomDialogButton" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="CustomDialogButton.Primary" parent="CustomDialogButton">
+        <item name="android:background">@drawable/button_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CustomDialogButton.Success" parent="CustomDialogButton">
+        <item name="android:background">@drawable/button_success</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CustomDialogButton.Danger" parent="CustomDialogButton">
+        <item name="android:background">@drawable/button_danger</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CustomDialogButton.Secondary" parent="CustomDialogButton">
+        <item name="android:background">@drawable/button_secondary</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="CustomDialogButton.Borderless" parent="CustomDialogButton">
+        <item name="android:background">@drawable/button_borderless</item>
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+</resources>

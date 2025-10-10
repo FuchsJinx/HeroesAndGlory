@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/game_bg_landscape"
+    android:padding="16dp">
+
+    <!-- Левая панель - информация о локации -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_panel"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/locationNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ancient Forest"
+                android:textSize="24sp"
+                android:textColor="@color/primary_gold"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="12dp" />
+
+            <ImageView
+                android:id="@+id/locationImage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/forest_location"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/locationDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A mysterious forest filled with ancient trees and hidden secrets. The air is thick with magic."
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Правая панель - квесты и действия -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="8dp">
+
+        <!-- Текущий квест -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_panel"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current Quest"
+                android:textSize="20sp"
+                android:textColor="@color/primary_gold"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/questTitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rescue the Merchant"
+                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/questDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="A merchant has been captured by bandits. Find their camp and rescue him."
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+        <!-- Кнопки действий -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/exploreButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Explore"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
+                style="@style/PrimaryButton" />
+
+            <Button
+                android:id="@+id/questsButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Quests"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
+                style="@style/PrimaryButton" />
+
+            <Button
+                android:id="@+id/restButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="Rest"
+                android:textSize="16sp"
+                style="@style/SecondaryButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

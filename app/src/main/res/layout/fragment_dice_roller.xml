@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/dice_bg_landscape"
+    android:padding="16dp">
+
+    <!-- Отображение бросков -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:paddingEnd="16dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dice Roller"
+            android:textSize="28sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/rounded_panel"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/diceResultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textSize="120sp"
+                android:textColor="@color/primary_gold"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:id="@+id/rollDetailsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Natural 20!\nCritical Success!"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/rollHistoryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="History: 15, 8, 20, 12"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+    <!-- Выбор кубиков -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Dice"
+            android:textSize="22sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <GridView
+            android:id="@+id/diceGrid"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:numColumns="2"
+            android:verticalSpacing="8dp"
+            android:horizontalSpacing="8dp"
+            android:padding="8dp"
+            android:background="@drawable/rounded_panel"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/rollButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="🎲 Roll Dice"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            style="@style/PrimaryButton" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Back to Game"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            style="@style/SecondaryButton" />
+
+    </LinearLayout>
+
+</LinearLayout>

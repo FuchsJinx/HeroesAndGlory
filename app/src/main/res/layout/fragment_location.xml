@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/location_bg_landscape"
+    android:padding="16dp">
+
+    <!-- Детали локации -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/locationNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ancient Forest"
+            android:textSize="28sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:id="@+id/locationImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/forest_detail"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/locationDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The ancient forest is filled with towering trees that block most sunlight. Strange sounds echo through the misty paths. You can feel magic in the air."
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:lineSpacingExtra="6dp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_panel" />
+
+    </LinearLayout>
+
+    <!-- Действия в локации -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available Actions"
+            android:textSize="22sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/actionsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:background="@drawable/rounded_panel" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Back to Map"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            style="@style/SecondaryButton" />
+
+    </LinearLayout>
+
+</LinearLayout>

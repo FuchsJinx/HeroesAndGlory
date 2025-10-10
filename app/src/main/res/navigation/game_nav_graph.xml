@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_nav_graph"
+    app:startDestination="@id/gameMainFragment">
+
+    <!-- Main Game Screen -->
+    <fragment
+        android:id="@+id/gameMainFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.GameMainFragment"
+        android:label="GameMainFragment"
+        tools:layout="@layout/fragment_game_main">
+
+        <action
+            android:id="@+id/action_gameMainFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+
+        <action
+            android:id="@+id/action_gameMainFragment_to_questFragment"
+            app:destination="@id/questFragment" />
+
+        <action
+            android:id="@+id/action_gameMainFragment_to_combatFragment"
+            app:destination="@id/combatFragment" />
+
+        <action
+            android:id="@+id/action_gameMainFragment_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
+
+        <action
+            android:id="@+id/action_gameMainFragment_to_diceRollerFragment"
+            app:destination="@id/diceRollerFragment" />
+
+        <action
+            android:id="@+id/action_gameMainFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+
+        <action
+            android:id="@+id/action_gameMainFragment_to_playerStatsFragment"
+            app:destination="@id/playerStatsFragment" />
+    </fragment>
+
+    <!-- Location Screen -->
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.LocationFragment"
+        android:label="LocationFragment"
+        tools:layout="@layout/fragment_location">
+
+        <action
+            android:id="@+id/action_locationFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+
+        <!-- Добавлены недостающие действия из методов навигации -->
+        <action
+            android:id="@+id/action_locationFragment_to_questFragment"
+            app:destination="@id/questFragment" />
+
+        <action
+            android:id="@+id/action_locationFragment_self"
+            app:destination="@id/locationFragment" />
+
+        <action
+            android:id="@+id/action_locationFragment_to_combatFragment"
+            app:destination="@id/combatFragment" />
+
+        <action
+            android:id="@+id/action_locationFragment_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
+
+        <action
+            android:id="@+id/action_locationFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+
+        <action
+            android:id="@+id/action_locationFragment_to_playerStatsFragment"
+            app:destination="@id/playerStatsFragment" />
+
+        <argument
+            android:name="locationId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Quest Screen -->
+    <fragment
+        android:id="@+id/questFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.QuestFragment"
+        android:label="QuestFragment"
+        tools:layout="@layout/fragment_quest">
+
+        <action
+            android:id="@+id/action_questFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+
+        <action
+            android:id="@+id/action_questFragment_to_questStepFragment"
+            app:destination="@id/questStepFragment" />
+
+        <!-- Добавлены обратные переходы -->
+        <action
+            android:id="@+id/action_questFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+
+        <argument
+            android:name="questId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Quest Step Screen -->
+    <fragment
+        android:id="@+id/questStepFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.QuestStepFragment"
+        android:label="QuestStepFragment"
+        tools:layout="@layout/fragment_quest_step">
+
+        <action
+            android:id="@+id/action_questStepFragment_to_questFragment"
+            app:destination="@id/questFragment" />
+
+        <action
+            android:id="@+id/action_questStepFragment_to_combatFragment"
+            app:destination="@id/combatFragment" />
+
+        <action
+            android:id="@+id/action_questStepFragment_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
+
+        <!-- Добавлены обратные переходы -->
+        <action
+            android:id="@+id/action_questStepFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+
+        <action
+            android:id="@+id/action_questStepFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+
+        <argument
+            android:name="stepId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Combat Screen -->
+    <fragment
+        android:id="@+id/combatFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.CombatFragment"
+        android:label="CombatFragment"
+        tools:layout="@layout/fragment_combat">
+
+        <action
+            android:id="@+id/action_combatFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+
+        <!-- Добавлены обратные переходы -->
+        <action
+            android:id="@+id/action_combatFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+
+        <action
+            android:id="@+id/action_combatFragment_to_questFragment"
+            app:destination="@id/questFragment" />
+
+        <action
+            android:id="@+id/action_combatFragment_to_questStepFragment"
+            app:destination="@id/questStepFragment" />
+
+        <argument
+            android:name="combatEncounterId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Dialog Screen -->
+    <fragment
+        android:id="@+id/dialogFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.DialogFragment"
+        android:label="DialogFragment"
+        tools:layout="@layout/fragment_dialog">
+
+        <action
+            android:id="@+id/action_dialogFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+
+        <!-- Добавлены обратные переходы -->
+        <action
+            android:id="@+id/action_dialogFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+
+        <action
+            android:id="@+id/action_dialogFragment_to_questFragment"
+            app:destination="@id/questFragment" />
+
+        <action
+            android:id="@+id/action_dialogFragment_to_questStepFragment"
+            app:destination="@id/questStepFragment" />
+
+        <action
+            android:id="@+id/action_dialogFragment_to_combatFragment"
+            app:destination="@id/combatFragment" />
+
+        <argument
+            android:name="dialogId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Dice Roller Screen -->
+    <fragment
+        android:id="@+id/diceRollerFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.DiceRollerFragment"
+        android:label="DiceRollerFragment"
+        tools:layout="@layout/fragment_dice_roller">
+
+        <action
+            android:id="@+id/action_diceRollerFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+    </fragment>
+
+    <!-- Inventory Screen -->
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.InventoryFragment"
+        android:label="InventoryFragment"
+        tools:layout="@layout/fragment_inventory">
+
+        <action
+            android:id="@+id/action_inventoryFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+
+        <!-- Добавлен обратный переход в локацию -->
+        <action
+            android:id="@+id/action_inventoryFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+
+        <argument
+            android:name="playerId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Player Stats Screen -->
+    <fragment
+        android:id="@+id/playerStatsFragment"
+        android:name="com.HG.heroesglory.presentation.fragments.PlayerStatsFragment"
+        android:label="PlayerStatsFragment"
+        tools:layout="@layout/fragment_player_stats">
+
+        <action
+            android:id="@+id/action_playerStatsFragment_to_gameMainFragment"
+            app:destination="@id/gameMainFragment" />
+
+        <!-- Добавлен обратный переход в локацию -->
+        <action
+            android:id="@+id/action_playerStatsFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+
+        <argument
+            android:name="playerId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

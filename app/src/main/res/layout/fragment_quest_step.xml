@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/quest_step_bg_landscape"
+    android:padding="16dp">
+
+    <!-- Информация о квесте -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/questTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rescue the Merchant"
+            android:textSize="24sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/stepTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find the Bandit Camp"
+            android:textSize="20sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bandit_camp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+
+    <!-- Описание и действия -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quest Step"
+            android:textSize="22sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/stepDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="The bandits have set up camp deep in the forest. Follow the tracks to locate their hideout. Be careful - the forest is dangerous and bandits may have set traps."
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:lineSpacingExtra="6dp"
+            android:padding="16dp"
+            android:background="@drawable/rounded_panel"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/actionButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Search for Tracks"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            style="@style/PrimaryButton" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Back to Quests"
+            android:textSize="18sp"
+            style="@style/SecondaryButton" />
+
+    </LinearLayout>
+
+</LinearLayout>

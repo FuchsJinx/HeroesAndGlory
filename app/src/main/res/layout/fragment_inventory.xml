@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/inventory_bg_landscape"
+    android:padding="16dp">
+
+    <!-- Информация о персонаже -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/playerNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aragorn - Warrior"
+            android:textSize="24sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:id="@+id/playerImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/warrior_character"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/hpText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HP: 45/50"
+                android:textSize="16sp"
+                android:textColor="@color/accent_green"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/rounded_panel" />
+
+            <TextView
+                android:id="@+id/goldText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gold: 125"
+                android:textSize="16sp"
+                android:textColor="@color/primary_gold"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/rounded_panel" />
+
+        </LinearLayout>
+
+        <!-- Статистика инвентаря -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_panel"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Статистика инвентаря"
+                android:textSize="16sp"
+                android:textColor="@color/primary_gold"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/totalItemsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Всего предметов: 0"
+                android:textSize="14sp"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/totalWeightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Общий вес: 0 кг"
+                android:textSize="14sp"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/capacityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вместимость: 0/100"
+                android:textSize="14sp"
+                android:textColor="@color/text_white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Инвентарь -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:paddingStart="16px">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Инвентарь"
+            android:textSize="22sp"
+            android:textColor="@color/primary_gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/inventoryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:background="@drawable/rounded_panel"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Назад в игру"
+            android:textSize="18sp"
+            style="@style/SecondaryButton" />
+
+    </LinearLayout>
+
+</LinearLayout>

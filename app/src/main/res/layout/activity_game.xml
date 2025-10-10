@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/game_bg_landscape">
+
+    <!-- Верхняя панель с информацией -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/top_panel_bg"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/locationNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Starting Location"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/questTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Current Quest"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/diceRollButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="🎲"
+                android:textSize="20sp"
+                android:layout_marginEnd="8dp"
+                style="@style/IconButton" />
+
+            <Button
+                android:id="@+id/inventoryButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="🎒"
+                android:textSize="20sp"
+                android:layout_marginEnd="8dp"
+                style="@style/IconButton" />
+
+            <Button
+                android:id="@+id/playersButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="👥"
+                android:textSize="20sp"
+                style="@style/IconButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Основной контент -->
+    <FrameLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/game_nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/game_nav_graph" />
+
+    </FrameLayout>
+
+    <!-- Нижняя панель действий -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_panel_bg"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <!-- Динамические кнопки действий будут добавляться здесь -->
+
+    </LinearLayout>
+
+</LinearLayout>
