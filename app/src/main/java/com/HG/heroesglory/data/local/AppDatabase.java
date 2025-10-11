@@ -37,7 +37,7 @@ import com.HG.heroesglory.data.local.dao.StoryDao;
                 Item.class, // ✅ ДОБАВЛЕНО
                 QuestStep.class
         },
-        version = 5,  // ✅ УВЕЛИЧИВАЕМ ВЕРСИЮ
+        version = 6,  // ✅ УВЕЛИЧИВАЕМ ВЕРСИЮ
         exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {

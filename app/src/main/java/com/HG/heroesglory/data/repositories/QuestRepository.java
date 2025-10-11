@@ -1,5 +1,7 @@
 package com.HG.heroesglory.data.repositories;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -8,14 +10,18 @@ import com.HG.heroesglory.data.local.dao.QuestDao;
 import com.HG.heroesglory.data.remote.FirebaseQuestDataSource;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class QuestRepository {
     private final QuestDao localDataSource;
     private final FirebaseQuestDataSource remoteDataSource;
+    private ExecutorService executorService;
 
     public QuestRepository(QuestDao localDataSource, FirebaseQuestDataSource remoteDataSource) {
         this.localDataSource = localDataSource;
         this.remoteDataSource = remoteDataSource;
+        this.executorService = Executors.newFixedThreadPool(2);
     }
 
     public LiveData<Quest> getQuestById(String questId) {
@@ -146,12 +152,12 @@ public class QuestRepository {
             return false;
         }
 
-        // Проверяем prerequisites если есть
-        if (quest.hasPrerequisites()) {
-            // TODO: Реализовать проверку выполненных prerequisite квестов
-            // Это потребует доступа к данным сессии игрока
-            return true; // Временно возвращаем true
-        }
+//        // Проверяем prerequisites если есть
+//        if (quest.hasPrerequisites()) {
+//            // TODO: Реализовать проверку выполненных prerequisite квестов
+//            // Это потребует доступа к данным сессии игрока
+//            return true; // Временно возвращаем true
+//        }
 
         return true;
     }
@@ -450,6 +456,36 @@ public class QuestRepository {
         });
 
         return result;
+    }
+
+    public void saveQuestLocally(Quest quest) {
+        executorService.execute(() -> {
+            localDataSource.insertQuest(quest);
+        });
+    }
+
+    public void saveQuestsLocally(List<Quest> quests) {
+        executorService.execute(() -> {
+            for (Quest quest : quests) {
+                localDataSource.insertQuest(quest);
+            }
+        });
+    }
+
+    // Метод для принудительной синхронизации с Firestore
+    public void syncQuestsWithFirestore(String locationId) {
+        remoteDataSource.getQuestsByLocationId(locationId, new FirebaseQuestDataSource.QuestsCallback() {
+            @Override
+            public void onSuccess(List<Quest> quests) {
+                saveQuestsLocally(quests);
+                Log.d("QuestRepository", "Successfully synced " + quests.size() + " quests from Firestore");
+            }
+
+            @Override
+            public void onError(String error) {
+                Log.e("QuestRepository", "Failed to sync quests from Firestore: " + error);
+            }
+        });
     }
 
     /**

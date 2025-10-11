@@ -102,11 +102,11 @@ public class QuestDetailsFragment extends Fragment {
         questDifficulty.setText(difficultyText);
 
         // Требования
-        if (currentQuest.hasPrerequisites()) {
-            questRequirements.setText("Требуется: завершить предыдущий квест");
-        } else {
-            questRequirements.setText("Требования: нет");
-        }
+//        if (currentQuest.hasPrerequisites()) {
+//            questRequirements.setText("Требуется: завершить предыдущий квест");
+//        } else {
+//            questRequirements.setText("Требования: нет");
+//        }
 
         // Награды
         updateRewardsUI();

@@ -32,7 +32,7 @@ public class Quest {
     @TypeConverters(MapConverter.class)
     private Map<String, Object> rewards;
 
-    private String prerequisiteQuestId;
+//    private String prerequisiteQuestId;
     private int minLevel = 1; // ✅ ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ
     private int maxLevel = 100; // ✅ ДОБАВЛЕНО: поле из Firestore
     private int difficulty = 5;
@@ -91,8 +91,8 @@ public class Quest {
     public Map<String, Object> getRewards() { return rewards; }
     public void setRewards(Map<String, Object> rewards) { this.rewards = rewards; }
 
-    public String getPrerequisiteQuestId() { return prerequisiteQuestId; }
-    public void setPrerequisiteQuestId(String prerequisiteQuestId) { this.prerequisiteQuestId = prerequisiteQuestId; }
+//    public String getPrerequisiteQuestId() { return prerequisiteQuestId; }
+//    public void setPrerequisiteQuestId(String prerequisiteQuestId) { this.prerequisiteQuestId = prerequisiteQuestId; }
 
     public int getMinLevel() { return minLevel; }
     public void setMinLevel(int minLevel) { this.minLevel = minLevel; }
@@ -132,9 +132,9 @@ public class Quest {
         return "MAIN".equals(type);
     }
 
-    public boolean hasPrerequisites() {
-        return prerequisiteQuestId != null && !prerequisiteQuestId.isEmpty();
-    }
+//    public boolean hasPrerequisites() {
+//        return prerequisiteQuestId != null && !prerequisiteQuestId.isEmpty();
+//    }
 
     public int getStepCount() {
         return stepIds != null ? stepIds.size() : 0;

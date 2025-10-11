@@ -101,8 +101,8 @@ public interface QuestDao {
     LiveData<List<Quest>> searchQuests(String query);
 
     // ✅ ДОБАВЛЕНО: Получение квестов с предварительными условиями
-    @Query("SELECT * FROM quests WHERE prerequisiteQuestId IS NOT NULL")
-    LiveData<List<Quest>> getQuestsWithPrerequisites();
+//    @Query("SELECT * FROM quests WHERE prerequisiteQuestId IS NOT NULL")
+//    LiveData<List<Quest>> getQuestsWithPrerequisites();
 
     // ✅ ДОБАВЛЕНО: Проверка существования квеста
     @Query("SELECT COUNT(*) FROM quests WHERE id = :questId")

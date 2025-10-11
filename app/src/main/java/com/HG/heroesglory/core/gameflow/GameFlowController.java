@@ -95,40 +95,40 @@ public class GameFlowController {
         return sessionRepository;
     }
 
-//    private void loadCurrentLocation() {
-//        if (currentSession.getCurrentLocationId() != null) {
-//            storyRepository.getLocationById(currentSession.getCurrentLocationId()).observeForever(location -> {
-//                this.currentLocation = location;
-//                loadCurrentQuest();
-//            });
-//        } else {
-//            // Загружаем стартовую локацию через ПРАВИЛЬНЫЙ метод
-//            storyRepository.getStoryStartingLocation(currentStory.getId()).observeForever(location -> {
-//                this.currentLocation = location;
-//                if (location != null) {
-//                    currentSession.setCurrentLocationId(location.getId());
-//                    // ✅ ИСПОЛЬЗУЕМ callback для сохранения
-//                    sessionRepository.updateSession(currentSession, new GameSessionRepository.SessionOperationCallback() {
-//                        @Override
-//                        public void onSuccess() {
-//                            loadCurrentQuest();
-//                        }
-//
-//                        @Override
-//                        public void onError(String error) {
-//                            if (stateChangeListener != null) {
-//                                stateChangeListener.onError("Failed to update session: " + error);
-//                            }
-//                        }
-//                    });
-//                } else {
-//                    if (stateChangeListener != null) {
-//                        stateChangeListener.onError("Starting location not found for story: " + currentStory.getId());
-//                    }
-//                }
-//            });
-//        }
-//    }
+    private void loadCurrentLocation() {
+        if (currentSession.getCurrentLocationId() != null) {
+            storyRepository.getLocationById(currentSession.getCurrentLocationId()).observeForever(location -> {
+                this.currentLocation = location;
+                loadCurrentQuest();
+            });
+        } else {
+            // Загружаем стартовую локацию через ПРАВИЛЬНЫЙ метод
+            storyRepository.getStoryStartingLocation(currentStory.getId()).observeForever(location -> {
+                this.currentLocation = location;
+                if (location != null) {
+                    currentSession.setCurrentLocationId(location.getId());
+                    // ✅ ИСПОЛЬЗУЕМ callback для сохранения
+                    sessionRepository.updateSession(currentSession, new GameSessionRepository.SessionOperationCallback() {
+                        @Override
+                        public void onSuccess() {
+                            loadCurrentQuest();
+                        }
+
+                        @Override
+                        public void onError(String error) {
+                            if (stateChangeListener != null) {
+                                stateChangeListener.onError("Failed to update session: " + error);
+                            }
+                        }
+                    });
+                } else {
+                    if (stateChangeListener != null) {
+                        stateChangeListener.onError("Starting location not found for story: " + currentStory.getId());
+                    }
+                }
+            });
+        }
+    }
 
     private void loadCurrentQuest() {
         if (currentSession.getCurrentQuestId() != null) {
@@ -253,9 +253,10 @@ public class GameFlowController {
             return TransitionLogic.RANDOM_FROM_POOL;
         }
 
-        if (currentQuest != null && currentQuest.hasPrerequisites()) {
+        if (currentQuest != null) {
             return TransitionLogic.QUEST_DEPENDENT;
         }
+        // && currentQuest.hasPrerequisites()
 
         return TransitionLogic.LINEAR;
     }
@@ -348,46 +349,46 @@ public class GameFlowController {
     }
 
     // ✅ ИСПРАВЛЕНИЕ: Обновите методы загрузки с использованием синхронных методов
-    private void loadCurrentLocation() {
-        if (currentSession.getCurrentLocationId() != null) {
-            // Используем синхронный метод в фоновом потоке
-            executor.execute(() -> {
-                Location location = storyRepository.getLocationByIdSync(currentSession.getCurrentLocationId());
-                if (location != null) {
-                    this.currentLocation = location;
-                    loadCurrentQuest();
-                }
-            });
-        } else {
-            // Загружаем стартовую локацию через синхронный метод
-            executor.execute(() -> {
-                Location location = storyRepository.getStoryStartingLocationSync(currentStory.getId());
-                if (location != null) {
-                    this.currentLocation = location;
-                    currentSession.setCurrentLocationId(location.getId());
-
-                    // Сохраняем сессию
-                    sessionRepository.updateSession(currentSession, new GameSessionRepository.SessionOperationCallback() {
-                        @Override
-                        public void onSuccess() {
-                            loadCurrentQuest();
-                        }
-
-                        @Override
-                        public void onError(String error) {
-                            if (stateChangeListener != null) {
-                                stateChangeListener.onError("Failed to update session: " + error);
-                            }
-                        }
-                    });
-                } else {
-                    if (stateChangeListener != null) {
-                        stateChangeListener.onError("Starting location not found for story: " + currentStory.getId());
-                    }
-                }
-            });
-        }
-    }
+//    private void loadCurrentLocation() {
+//        if (currentSession.getCurrentLocationId() != null) {
+//            // Используем синхронный метод в фоновом потоке
+//            executor.execute(() -> {
+//                Location location = storyRepository.getLocationByIdSync(currentSession.getCurrentLocationId());
+//                if (location != null) {
+//                    this.currentLocation = location;
+//                    loadCurrentQuest();
+//                }
+//            });
+//        } else {
+//            // Загружаем стартовую локацию через синхронный метод
+//            executor.execute(() -> {
+//                Location location = storyRepository.getStoryStartingLocationSync(currentStory.getId());
+//                if (location != null) {
+//                    this.currentLocation = location;
+//                    currentSession.setCurrentLocationId(location.getId());
+//
+//                    // Сохраняем сессию
+//                    sessionRepository.updateSession(currentSession, new GameSessionRepository.SessionOperationCallback() {
+//                        @Override
+//                        public void onSuccess() {
+//                            loadCurrentQuest();
+//                        }
+//
+//                        @Override
+//                        public void onError(String error) {
+//                            if (stateChangeListener != null) {
+//                                stateChangeListener.onError("Failed to update session: " + error);
+//                            }
+//                        }
+//                    });
+//                } else {
+//                    if (stateChangeListener != null) {
+//                        stateChangeListener.onError("Starting location not found for story: " + currentStory.getId());
+//                    }
+//                }
+//            });
+//        }
+//    }
 
     // ✅ УПРОЩЕННЫЕ РЕАЛИЗАЦИИ СЛОЖНЫХ МЕТОДОВ
 
